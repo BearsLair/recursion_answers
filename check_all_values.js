@@ -1,3 +1,4 @@
+// Test callback function
 const allAreLessThanSeven = (num) => num < 7;
 
 function all(array, callback, index = 0) {
@@ -22,6 +23,8 @@ function all(array, callback, index = 0) {
     return true;
   else return false;
 }
+
+// Test cases
 
 console.log(all([1, 3, 5], allAreLessThanSeven)); // true
 

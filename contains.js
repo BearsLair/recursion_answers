@@ -1,3 +1,4 @@
+// Test nested object
 var nestedObject = {
   data: {
     info: {
@@ -30,6 +31,7 @@ function contains(nestedObject, item) {
   return false;
 }
 
+// Test cases using nestedObject
 console.log("NestedObject contains 44: ", contains(nestedObject, 44));
 console.log("---------------------------");
 console.log("NestedObject contains 'foo': ", contains(nestedObject, "foo"));
