@@ -1,23 +1,18 @@
-function totalIntegers(arr, acc = 0) {
-  console.log(arr);
+function totalIntegers(arr) {
+  let total = 0;
 
-  // Base case
-  if (typeof arr == "number") {
-    console.log("arr is a number, +1");
-    return acc + 1;
+  if (Array.isArray(arr) == true && arr.length == 0) {
+    return 0;
+  } else if (Array.isArray(arr) == false && typeof arr == "number") {
+    return 1;
   } else {
     arr.map((item) => {
-      if (typeof item == "number") {
-        console.log("Item in array is a number, +1");
-        acc + 1;
-      } else if (Array.isArray(item)) {
-        console.log("Item is a non-empty array");
-        acc + totalIntegers(item);
+      if (Array.isArray(item)) {
+        total += totalIntegers(item);
       }
     });
-
-    return acc;
   }
+  return total;
 }
 
 console.log(
