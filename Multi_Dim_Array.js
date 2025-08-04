@@ -1,17 +1,21 @@
 function totalIntegers(arr) {
-  let total = 0;
-
-  if (Array.isArray(arr) == true && arr.length == 0) {
+  console.log(arr);
+  if (Array.isArray(arr) && arr.length == 0) {
     return 0;
-  } else if (Array.isArray(arr) == false && typeof arr == "number") {
+  } else if (Number.isInteger(arr)) {
     return 1;
-  } else {
-    arr.map((item) => {
-      if (Array.isArray(item)) {
-        total += totalIntegers(item);
-      }
-    });
+  } else if (Number.isInteger(arr) == false) {
+    return 0;
   }
+
+  let total = 0;
+  let shift = arr.shift();
+  console.log(shift);
+
+  if (Array.isArray(shift)) {
+    total + totalIntegers(shift);
+  }
+
   return total;
 }
 
