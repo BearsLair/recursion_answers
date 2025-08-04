@@ -1,5 +1,6 @@
 function totalIntegers(arr) {
   console.log("Array/Number being assessed: ", arr);
+  // Base Case
   if (arr.length == 0) {
     console.log("Empty array!");
     return 0;
